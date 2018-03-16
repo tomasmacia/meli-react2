@@ -1,9 +1,9 @@
 require('babel-register');
 require.extensions['.css'] = () => {
- return;
+  return;
 };
 require.extensions['.png'] = () => {
- return;
+  return;
 };
 
 const React = require('react');
@@ -12,10 +12,10 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const template = require('../template');
-const App = require('./components/App');
+const Home = require('./components/home');
 const routes = require('./api');
 
-app.use('/public', express.static(path.join(__dirname, '../public')))
+app.use('/public', express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
 // app.get('/', (req, res)=> {
 //   const markup = ReactDOMServer.renderToString(React.createElement(App, null, null));
@@ -28,5 +28,5 @@ app.use('/', routes);
 // });
 
 app.listen(5000, () => {
-  console.log("Listening on port 5000");
-})
+  console.log('Listening on port 5000');
+});
