@@ -3,33 +3,31 @@
 const React = require('react');
 require('./MeliLayout.css');
 
-
-class Header extends React.Component {
-  render(){
-    return (
-        <header className="header">
-          {/* <img src={Logo} className="logo" alt="MercadoLibre" /> */}
-          <SearchBar />
-        </header>
-    )
-  }
-}
+const Header = () => (
+  <header className="header">
+    {/* <img src={Logo} className="logo" alt="MercadoLibre" /> */}
+    <SearchBar />
+  </header>
+);
 
 class SearchBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchInput : ""
-    }
+      searchInput: ''
+    };
   }
 
   update(e) {
-    this.setState({
-      searchInput : e.target.value
-    }, () => console.log("hola!"))
+    this.setState(
+      {
+        searchInput: e.target.value
+      },
+      () => console.log('hola!')
+    );
   }
 
-  render(){
+  render() {
     return (
       <form className="search-container">
         <input
@@ -40,25 +38,21 @@ class SearchBar extends React.Component {
           ref="searchInput"
           onChange={this.update.bind(this)}
         />
-        <input type="button" className="search-button" onClick={() => this.props.history.push(this.state.searchInput)} />
+        <input
+          type="button"
+          className="search-button"
+          onClick={() => this.props.history.push(this.state.searchInput)}
+        />
       </form>
-    )
+    );
   }
 }
 
-
-
-
-class MeliLayout extends React.Component {
-  render(){
-    return (
-      <div className="layout">
-        <Header />
-        {this.props.children}
-      </div>
-    )
-  }
-}
-
+const MeliLayout = (props) => (
+  <div className="layout">
+    <Header />
+    {props.children}
+  </div>
+);
 
 module.exports = MeliLayout;

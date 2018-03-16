@@ -1,10 +1,6 @@
-const React = require('react')
-const HomePage = require('./home/index')
+const React = require('react');
+const HomePage = require('./home/index');
 
-class Home extends React.Component {
-  render() {
-    return <HomePage />;
-  }
-}
+const Home = () => <HomePage />;
 
 module.exports = Home;
