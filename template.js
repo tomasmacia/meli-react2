@@ -1,7 +1,4 @@
-const React = require('react');
-
-module.exports = (title, body) => {
-  return `
+module.exports = (title, body) => `
     <!DOCTYPE html>
     <html>
       <head>
@@ -13,5 +10,4 @@ module.exports = (title, body) => {
         <script src="/public/bundle.js"></script>
       </body>
     </html>
-  `
-}
+  `;
