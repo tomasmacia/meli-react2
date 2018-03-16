@@ -1,31 +1,34 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, "./app/index.js"),
+  entry: path.join(__dirname, './app/index.js'),
   output: {
-    path: path.join(__dirname, "./public"),
-    filename: "bundle.js"
+    path: path.join(__dirname, './public'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader',
+        options: {
+          presets: ['react', 'stage-0', ['env', { targets: { browsers: ['last 2 versions'] } }]],
+        },
       },
       {
         test: /\.css$/,
-        loader: ["style-loader", "css-loader"]
+        loader: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
-          }
-        ]
-      }
-    ]
-  }
-}
+            options: {},
+          },
+        ],
+      },
+    ],
+  },
+};
