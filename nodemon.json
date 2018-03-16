@@ -1,0 +1,6 @@
+{
+  "verbose": false,
+  "events": {
+    "restart": "echo \"App restarted due to changes in:\n'$FILENAME'\""
+  }
+}
