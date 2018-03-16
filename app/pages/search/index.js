@@ -11,18 +11,10 @@ const ItemCard = (props) => {
   );
 };
 
-const SearchPage = props => (
-  <MeliLayout>
-    <div>{props.itemList.map(item => <ItemCard item={item} key={item.id} />)}</div>
-  </MeliLayout>
-);
+const SearchPage = () => <MeliLayout>Search View</MeliLayout>;
 
 ItemCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
-};
-
-SearchPage.propTypes = {
-  itemList: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 module.exports = SearchPage;

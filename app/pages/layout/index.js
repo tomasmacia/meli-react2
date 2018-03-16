@@ -1,11 +1,9 @@
-//const Logo = require('./logo.png');
-//const searchIcon = require('./search.png');
+/* eslint-disable react/prop-types, react/jsx-no-bind, react/no-string-refs */
 const React = require('react');
 require('./MeliLayout.css');
 
 const Header = () => (
   <header className="header">
-    {/* <img src={Logo} className="logo" alt="MercadoLibre" /> */}
     <SearchBar />
   </header>
 );
@@ -14,17 +12,14 @@ class SearchBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      searchInput: ''
+      searchInput: '',
     };
   }
 
   update(e) {
-    this.setState(
-      {
-        searchInput: e.target.value
-      },
-      () => console.log('hola!')
-    );
+    this.setState({
+      searchInput: e.target.value,
+    });
   }
 
   render() {
@@ -48,7 +43,7 @@ class SearchBar extends React.Component {
   }
 }
 
-const MeliLayout = (props) => (
+const MeliLayout = props => (
   <div className="layout">
     <Header />
     {props.children}
