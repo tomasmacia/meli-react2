@@ -1,7 +1,4 @@
-const React = require('react');
-
-module.exports = (title, body) => {
-  return `
+module.exports = (title, body, bundle) => `
     <!DOCTYPE html>
     <html>
       <head>
@@ -10,8 +7,7 @@ module.exports = (title, body) => {
       </head>
       <body>
         <div id='root'>${body}</div>
-        <script src="/public/bundle.js"></script>
+        <script src="/public/${bundle}.bundle.js"></script>
       </body>
     </html>
-  `
-}
+  `;
